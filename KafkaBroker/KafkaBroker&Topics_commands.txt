@@ -1,0 +1,22 @@
+cd /home/anshul-r-s/kafka
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+cd /home/anshul-r-s/kafka
+bin/kafka-server-start.sh config/server.properties
+
+cd /home/anshul-r-s/kafka
+bin/kafka-topics.sh --create --topic tasks \
+  --bootstrap-server localhost:9092 \
+  --partitions 2 --replication-factor 1
+
+bin/kafka-topics.sh --create --topic results \
+  --bootstrap-server localhost:9092 \
+  --partitions 2 --replication-factor 1
+
+bin/kafka-topics.sh --create --topic heartbeats \
+  --bootstrap-server localhost:9092 \
+  --partitions 1 --replication-factor 1
+
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+
