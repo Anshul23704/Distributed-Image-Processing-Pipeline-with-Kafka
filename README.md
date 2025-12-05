@@ -229,5 +229,3 @@ They appear in the dashboard automatically.
 * Beautiful Web UI with progress bars
 
 ---
-
-Just tell me!
