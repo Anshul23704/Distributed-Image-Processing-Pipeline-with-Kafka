@@ -2,7 +2,7 @@
 
 ### *Kafka-Powered • ZeroTier-Connected • Multi-Node Image Processing*
 
-**4-node distributed system that performs **parallel image processing** by splitting images into tiles, distributing tiles to worker nodes, processing them with OpenCV, and reconstructing the final output — all controlled through a live web dashboard.
+4-node distributed system that performs **parallel image processing** by splitting images into tiles, distributing tiles to worker nodes, processing them with OpenCV, and reconstructing the final output — all controlled through a live web dashboard.
 
 Nodes communicate **over a ZeroTier virtual network**, ensuring secure, LAN-independent connectivity.
 
