@@ -11,7 +11,7 @@ Nodes communicate **over a ZeroTier virtual network**, ensuring secure, LAN-inde
 # 📁 Repository Structure
 
 ```
-129_PROJECT3_BD/
+Distributed-Image-Processing-Pipeline-with-Kafka/
 │
 ├── KafkaBroker/                       # Node 2 (Broker)
 │   ├── KafkaBroker&Topics_commands.txt
