@@ -8,7 +8,7 @@ Nodes communicate **over a ZeroTier virtual network**, ensuring secure, LAN-inde
 
 ---
 
-# 📁 Repository Structure
+# Repository Structure
 
 ```
 Distributed-Image-Processing-Pipeline-with-Kafka/
@@ -38,13 +38,13 @@ Distributed-Image-Processing-Pipeline-with-Kafka/
 
 ---
 
-# 🌐 ZeroTier Networking Setup
+# ZeroTier Networking Setup
 
 ### *All communication depends on ZeroTier. Configure this before running anything.*
 
 ---
 
-## **1️⃣ Install ZeroTier (all four nodes)**
+## **1 Install ZeroTier (all four nodes)**
 
 Linux:
 
@@ -57,7 +57,7 @@ Download from [https://www.zerotier.com/download](https://www.zerotier.com/downl
 
 ---
 
-## **2️⃣ Join the same ZeroTier network**
+## **Join the same ZeroTier network**
 
 Run on every node:
 
@@ -73,7 +73,7 @@ sudo zerotier-cli join 8056c2e21c000001
 
 ---
 
-## **3️⃣ Approve nodes in the ZeroTier web dashboard**
+## **3️ Approve nodes in the ZeroTier web dashboard**
 
 Visit:
 
@@ -94,7 +94,7 @@ You will get IPs like:
 
 ---
 
-## **4️⃣ Verify IPs**
+## **4️ Verify IPs**
 
 On each node:
 
@@ -104,7 +104,7 @@ ip addr show | grep zt
 
 ---
 
-## **5️⃣ Check node-to-node communication**
+## **5️Check node-to-node communication**
 
 Node1 → Node2:
 
@@ -122,7 +122,7 @@ Every node must be reachable.
 
 ---
 
-## **6️⃣ Update `config.py` (Master + Workers)**
+## **6️Update `config.py` (Master + Workers)**
 
 Set:
 
@@ -138,11 +138,11 @@ KAFKA_BROKER = "10.147.20.102:9092"
 
 ---
 
-# 🚀 **System Startup Order (VERY IMPORTANT)**
+# **System Startup Order (VERY IMPORTANT)**
 
 All nodes will fail unless started in this exact sequence:
 
-## **1️⃣ Start the Kafka Broker (Node 2) — FIRST**
+## **1️ Start the Kafka Broker (Node 2) — FIRST**
 
 Kafka must be running before anything else.
 
@@ -168,7 +168,7 @@ kafka-topics.sh --create --topic heartbeats --partitions 1 --replication-factor 
 
 ---
 
-## **2️⃣ Start the Master Node (Node 1) — SECOND**
+## **2️Start the Master Node (Node 1) — SECOND**
 
 On Node1:
 
@@ -188,7 +188,7 @@ http://<Node1-ZeroTier-IP>:8000
 
 ---
 
-## **3️⃣ Start the Worker Nodes (Node 3 & Node 4) — LAST**
+## **3️ Start the Worker Nodes (Node 3 & Node 4) — LAST**
 
 Only start workers after the master is up.
 
@@ -218,7 +218,7 @@ They appear in the dashboard automatically.
 
 ---
 
-# 🖼 Features
+#  Features
 
 * Distributed tile-based image processing
 * Real-time worker monitoring
